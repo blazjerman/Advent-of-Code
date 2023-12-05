@@ -12,4 +12,5 @@ add_executable(
         Day_3.c
         main.c
         Utility.c
+        Day_4.c
 )
