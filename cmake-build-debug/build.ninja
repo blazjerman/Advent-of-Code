@@ -73,8 +73,8 @@ build CMakeFiles/main.c.dir/main.c.obj: C_COMPILER__main.2ec_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\main.c.dir
   OBJECT_FILE_DIR = CMakeFiles\main.c.dir
 
-build CMakeFiles/main.c.dir/FileBuffer.c.obj: C_COMPILER__main.2ec_unscanned_Debug C$:/Users/Blaz/CLionProjects/AdventOfCode/FileBuffer.c || cmake_object_order_depends_target_main.c
-  DEP_FILE = CMakeFiles\main.c.dir\FileBuffer.c.obj.d
+build CMakeFiles/main.c.dir/Utility.c.obj: C_COMPILER__main.2ec_unscanned_Debug C$:/Users/Blaz/CLionProjects/AdventOfCode/Utility.c || cmake_object_order_depends_target_main.c
+  DEP_FILE = CMakeFiles\main.c.dir\Utility.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\main.c.dir
   OBJECT_FILE_DIR = CMakeFiles\main.c.dir
@@ -87,7 +87,7 @@ build CMakeFiles/main.c.dir/FileBuffer.c.obj: C_COMPILER__main.2ec_unscanned_Deb
 #############################################
 # Link the executable main.c.exe
 
-build main.c.exe: C_EXECUTABLE_LINKER__main.2ec_Debug CMakeFiles/main.c.dir/Day_1.c.obj CMakeFiles/main.c.dir/Day_2.c.obj CMakeFiles/main.c.dir/Day_3.c.obj CMakeFiles/main.c.dir/main.c.obj CMakeFiles/main.c.dir/FileBuffer.c.obj
+build main.c.exe: C_EXECUTABLE_LINKER__main.2ec_Debug CMakeFiles/main.c.dir/Day_1.c.obj CMakeFiles/main.c.dir/Day_2.c.obj CMakeFiles/main.c.dir/Day_3.c.obj CMakeFiles/main.c.dir/main.c.obj CMakeFiles/main.c.dir/Utility.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\main.c.dir

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <intrin.h>
 
-#include "FileBuffer.c"
+#include "Utility.c"
 
 #include "Day_1.c"
 #include "Day_2.c"
@@ -37,8 +37,8 @@ int main() {
     {
         char *buffer = getStringFromFile("../inDay_3.txt");
 
-        printf("Solution Day3_1: %d\n", solution3_1(buffer));
-        //printf("Solution Day3_1: %d\n", solution3_2(buffer));
+        printf("Solution Day3_1: %d\n", solution3_1(buffer,141,140));
+        printf("Solution Day3_2: %d\n", solution3_2(buffer,141,140));
 
         printf("\n");
         free(buffer);
