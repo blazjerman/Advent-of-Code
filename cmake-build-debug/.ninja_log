@@ -1,0 +1,16 @@
+# ninja log v5
+1	338	7234910678430259	CMakeFiles/untitled1.dir/main.c.obj	a9483150c576393b
+1	297	7234911787777812	CMakeFiles/day_1.c.dir/main.c.obj	9c0499f9acee3b16
+0	79	7234919279534119	build.ninja	5acee07e4a1f584f
+1	286	7234918984312382	CMakeFiles/main.c.dir/main.c.obj	74d5871eee832d04
+1	54	7234919247819244	main.c.exe	b251d1e48d591c6d
+1	281	7234918196952970	CMakeFiles/main.c.dir/Day_3.c.obj	5323050f225c5bda
+297	352	7234911788310273	day_1.c.exe	b3406597bc054f91
+5	334	7234910678405213	CMakeFiles/untitled1.dir/day_1.c.obj	b203326cf4770ecd
+2	272	7234913912136950	CMakeFiles/main.c.dir/day_1.c.obj	61cc1b211668a875
+2	280	7234915149100794	CMakeFiles/main.c.dir/day_2.c.obj	f59ab1f12a2e119c
+4	269	7234916666875643	CMakeFiles/main.c.dir/day_3.c.obj	eca1199c93910384
+4	262	7234918492750179	CMakeFiles/main.c.dir/FileBuffer.c.obj	d88a3a498f5c639b
+10	281	7234918196952970	CMakeFiles/main.c.dir/Day_2.c.obj	d9c29e1b478b15b0
+5	282	7234918196952970	CMakeFiles/main.c.dir/Day_1.c.obj	4cff637718e6528c
+1	75	7234919279534119	build.ninja	5acee07e4a1f584f
