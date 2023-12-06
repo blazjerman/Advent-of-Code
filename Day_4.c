@@ -18,8 +18,8 @@ static uint32_t solution4_1(const char *test){
 
     uint32_t start;
     uint32_t end;
-    uint32_t size;
 
+    uint32_t size;
 
     for (uint32_t i = 0; i < strlen(test); ++i){
 
@@ -31,46 +31,39 @@ static uint32_t solution4_1(const char *test){
         }
 
         break;
-
     }
 
 
     for (uint32_t j = 0; j * size + size < strlen(test); ++j) {
-        for (uint32_t i = start; i < size; ++i) {
-
-            if(test[j * size + i] == '|')break;
+        for (uint32_t i = start; i < end; ++i) {
 
             if((uint32_t)(test[j * size + i] - '0') > 9) {
 
-                if (number != 0){
+                if (number == 0)continue;
 
-                    for (uint32_t k = end; k < size; ++k) {
+                for (uint32_t k = end; k < size; ++k) {
 
-                        if((uint32_t)(test[j * size + k] - '0') > 9){
+                    if((uint32_t)(test[j * size + k] - '0') > 9){
 
-                           if(number == cmpNumber){
-                               if(point == 0)point = 1;
-                               else point *= 2;
-                           }
+                       if(number == cmpNumber){
+                           if(point == 0)point = 1;
+                           else point <<= 1;
+                       }
 
-                           cmpNumber = 0;
-
-                        } else{
-
-                            cmpNumber *= 10;
-                            cmpNumber += (uint32_t)(test[j * size + k] - '0');
-
-                        }
+                       cmpNumber = 0;
+                       continue;
                     }
-                    number = 0;
+
+                    cmpNumber *= 10;
+                    cmpNumber += (uint32_t)(test[j * size + k] - '0');
                 }
 
-            } else{
-
-                number *= 10;
-                number += (uint32_t)(test[j * size + i] - '0');
-
+                number = 0;
+                continue;
             }
+
+            number *= 10;
+            number += (uint32_t)(test[j * size + i] - '0');
         }
 
         ret += point;
@@ -78,7 +71,6 @@ static uint32_t solution4_1(const char *test){
     }
 
     return ret;
-
 }
 
 
@@ -110,18 +102,24 @@ static uint32_t solution4_2(const char *test){
     }
 
 
-    uint32_t matching[strlen(test) / size];
+    uint32_t matching = 0;
     uint32_t pointsOn[strlen(test) / size] = {};
-    uint32_t points[strlen(test) / size] = {};
-
-    for (int i = 0; i < strlen(test) / size; ++i) {
-        points[i] = 1;
-    }
 
 
-    for (uint32_t j = 0; j * size + size < strlen(test); ++j) {
+    for (uint32_t j = 0; j < strlen(test) / size; ++j) {
 
-        matching[j] = 0;
+        ++pointsOn[j];
+
+        if (j > 0){
+            for (int k = 0; k < pointsOn[j - 1]; ++k) {
+                for (uint32_t l = j; l < j + matching; ++l) {
+                    ++pointsOn[l];
+                }
+            }
+        }
+
+        ret += pointsOn[j];
+        matching = 0;
 
         for (uint32_t i = start; i < size; ++i) {
 
@@ -136,7 +134,7 @@ static uint32_t solution4_2(const char *test){
                         if((uint32_t)(test[j * size + k] - '0') > 9){
 
                             if(number == cmpNumber){
-                                ++matching[j];
+                                ++matching;
                                 if(point == 0)point = 1;
                                 else point *= 2;
                             }
@@ -160,30 +158,8 @@ static uint32_t solution4_2(const char *test){
 
             }
         }
-        pointsOn[j] = point;
-        ret += point;
+
         point = 0;
-    }
-
-
-    for (uint32_t i = 0; i < strlen(test) / size; ++i) {
-
-        printf("M: %d\n",  matching[i]);
-
-        for (uint32_t j = i + 1; j < i + matching[i] + 1; ++j) {
-            points[j] += pointsOn[j];
-        }
-
-    }
-
-    printf("\n");
-
-
-    for (uint32_t i = 0; i < strlen(test) / size; ++i) {
-
-        printf("M: %d %d\n",  points[i] , pointsOn[i]);
-
-
     }
 
     return ret;

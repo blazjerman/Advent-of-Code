@@ -33,7 +33,8 @@ static char *getStringFromFile(char *path){
 
     fread(buffer, 1, file_size, file);
 
-    buffer[file_size] = '\0';
+    buffer[file_size] = '\n';
+    buffer[file_size + 1] = '\0';
 
     fclose(file);
 
