@@ -23,4 +23,5 @@ add_executable(
         Day_5.c
         Day_6.c
         Day_7.c
+        Day_8.c
 )
