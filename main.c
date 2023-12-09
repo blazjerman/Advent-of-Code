@@ -8,6 +8,7 @@
 #include "Day_3.c"
 #include "Day_4.c"
 #include "Day_5.c"
+#include "Day_6.c"
 
 
 int main() {
@@ -60,6 +61,17 @@ int main() {
 
         printf("Solution Day5_1: %lld\n", solution5_1(buffer));
         printf("Solution Day5_2: %lld\n", solution5_2(buffer));
+
+        printf("\n");
+        free(buffer);
+    }
+
+
+    {
+        char *buffer = getStringFromFile("../inDay_6.txt");
+
+        printf("Solution Day6_1: %lld\n", solution6_1(buffer));
+        printf("Solution Day6_2: %lld\n", solution6_2(buffer));
 
         printf("\n");
         free(buffer);
